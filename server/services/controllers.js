@@ -1,5 +1,5 @@
 var database = require('./db');
-var Promise = require('bluebird');
+var Promise = require('bluebird'); // use sequalize's bluebird instead
 var objectify = require('./../classes/controllerClasses');
 
 module.exports = {
@@ -22,7 +22,7 @@ module.exports = {
     },
 
     //for a user joining a meal
-    joinMeal: function(data) {
+    joinMeal: function(data) { // use put 
       return database.Users.find({ where: {firstName: data.firstName, lastName: data.lastName} })
       .then(function(user) {
         //this should get the user data that matched the user details passed
@@ -40,12 +40,14 @@ module.exports = {
       });
     }
 
+    // delete method
+
   },
 
   meals: {
 
     // TODO: Perhaps rename to getAll?
-    get: function (data) {
+    get: function (data) { // what to expect from get meal
       return database.Meals.findAll({ include: [database.Users, database.Restaurants]})
         .then(function (meals) {
           //use the bluebird promise functions
