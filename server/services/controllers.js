@@ -1,5 +1,5 @@
 var database = require('./db');
-var Promise = require('bluebird');
+var Promise = require('bluebird'); // use sequalize's bluebird instead
 var objectify = require('./../classes/controllerClasses');
 
 module.exports = {
@@ -40,12 +40,14 @@ module.exports = {
       });
     }
 
+    // delete method
+
   },
 
   meals: {
 
     // TODO: Perhaps rename to getAll?
-    get: function (data) {
+    get: function (data) { // what to expect from get meal
       return database.Meals.findAll({ include: [database.Users, database.Restaurants]})
         .then(function (meals) {
           //use the bluebird promise functions
