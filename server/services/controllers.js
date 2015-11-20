@@ -22,7 +22,7 @@ module.exports = {
     },
 
     //for a user joining a meal
-    joinMeal: function(data) { // use put 
+    joinMeal: function(data) {
       return database.Users.find({ where: {firstName: data.firstName, lastName: data.lastName} })
       .then(function(user) {
         //this should get the user data that matched the user details passed
