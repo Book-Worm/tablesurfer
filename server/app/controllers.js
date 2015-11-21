@@ -72,7 +72,7 @@ module.exports = {
 
     getOne: function (data) {
 
-      return database.Meal.find({ where: {id: data}, include: [database.User, database.Restaurants] })
+      return database.Meal.find({ where: {id: data}, include: [database.User, database.Restaurant] })
         .then(function (meal) {
           return meal.getUsers().then(function (result) {
             var mealObj = {meal: meal, Attendees: result};
@@ -84,22 +84,25 @@ module.exports = {
     },
 
     post: function (data) {
-      return database.User.findOrCreate({where: {username: data.username}})
+
+      return database.User.find({where: {name: data.username}})
         .then(function (user) {
+          console.log(user, "LOGGING USER");
           return database.Restaurant.findOrCreate({where: {name: data.restaurant}, defaults:  {name: data.restaurant, address: data.address, contact: data.contact, lat: data.latitude, lng: data.longitude}})
             .then(function (restaurant) {
+              console.log(restaurant, "LOGGING Restaurant");
               return database.Meal.create({
                 title: data.title,
                 date: data.date,
                 time: data.time,
                 description: data.description,
-                UserId: user[0].dataValues.id,
-                RestaurantId: restaurant[0].dataValues.id
+                UserId: user.dataValues.id,
+                RestaurantId: restaurant.dataValues.id
               }).then(function (message) {
                 return message;
               });
-            });
-        });
+            })
+        })
     }
   },
   restaurants: {},

@@ -88,9 +88,6 @@ var Genre = db.define("Genre", {
 Genre.hasOne(Restaurant);
 Restaurant.belongsTo(Genre);
 
-var Attendee = db.define("Attendee", {
-});
-
 User.belongsToMany(Meal, {through: 'Attendees'});
 Meal.belongsToMany(User, {through: 'Attendees'});
 
@@ -101,4 +98,4 @@ db.sync({force:true});
 exports.Meal = Meal;
 exports.User = User;
 exports.Restaurant = Restaurant;
-exports.Attendee = Attendee;
+
