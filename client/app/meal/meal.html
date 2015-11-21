@@ -1,10 +1,15 @@
 <div id="meal" ng-controller="MealCtrl as meal">
-  <h3> Meal Details here </h3>
+  <h3> Meal Title:  {{meal.data.meal.title}}</h3>
 
-  <h5> You are currently visiting meal: {{ meal.id }} </h5>
+  <!-- <h5> You are currently visiting meal: {{ meal.id }} </h5> -->
 
-  {{meal.data}}
-
+  <div style="text-align:left">
+    <div><strong>Host Name: </strong>{{meal.data.meal.User.username}}</div><br>
+    <div><strong>Location: </strong>{{meal.data.meal.Restaurant.address}}</div><br>
+    <div><strong>Event Time: </strong>{{meal.data.meal.time}} </div><br>
+    <div><strong>Attendees: </strong>{{meal.data.attendees}} </div><br>
+    <div><strong>Description: </strong>{{meal.data.meal.description}}</div><br>
+  </div>
   <div id='map' style="height:350px"></div>
 
 </div>
