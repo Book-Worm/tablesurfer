@@ -69,7 +69,9 @@ describe("Meals insertion to database", function() {
 
     return request({method: "POST", uri: "http://127.0.0.1:3000/api/meal", body: obj, json: true, resolveWithFullResponse: true})
     .then(function (data) {
-      expect(data.statusCode).to.equal(201);
+      return db.Restaurant.find( {where : {cuisine : "Ethiopian"} })
+    }).then( function (meal) {
+      expect(meal.cuisine).to.equal("Ethiopian");
       done();
     }).catch(function(err){
       done(err);
