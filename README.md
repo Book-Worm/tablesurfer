@@ -2,14 +2,12 @@
 
 ## Team
 
-Fawn Bertram
-Soroush Mehraein
-Yifeng Wang
-Colin Seale
+[Fawn Bertram](https://github.com/Faline10)
+[Soroush Mehraein](https://github.com/smehraein)
+[Yifeng Wang](https://github.com/yifengwang15)
+[Colin Seale](https://github.com/ceseale)
 
 ## Tech Overview
-
-Simplified overview of project's tech stack:
 
 * **Task Runner**
   * Grunt
@@ -25,9 +23,7 @@ Simplified overview of project's tech stack:
 
 ## File Structure
 
->`.bowerrc` is used to specify path for bower components; these client-side dependencies are located in `client/lib`
-
-Simplified overview of project's file structure is laid out below:
+`.bowerrc` is used to specify path for bower components; these client-side dependencies are located in `client/lib`
 
 ```
 client
@@ -53,10 +49,6 @@ server
 Using the Angular team approved style guide by John Papa. App was designed with modularity and code reuse in mind.
 
 [Angular Style Guide](http://www.johnpapa.net/angular-style-guide/)
-
-General JavaScript code styling was following the industry-approved Airbnb method.
-
-[Airbnb Style Guide](https://github.com/airbnb/javascript)
 
 ## Database
 
