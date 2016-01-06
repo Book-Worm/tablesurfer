@@ -1,4 +1,4 @@
-# tablesurfer
+# Tablesurfer
 
 ## Team
 
@@ -6,6 +6,12 @@
 [Soroush Mehraein](https://github.com/smehraein)
 [Yifeng Wang](https://github.com/yifengwang15)
 [Colin Seale](https://github.com/ceseale)
+
+## Team
+
+- __Product Owner__: [Fawn Bertram](https://github.com/Faline10)
+- __Scrum Master__: [Soroush Mehraein](https://github.com/smehraein)
+- __Development Team Members__: [Yifeng Wang](https://github.com/yifengwang15), [Colin Seale](https://github.com/ceseale)
 
 ## Tech Overview
 
