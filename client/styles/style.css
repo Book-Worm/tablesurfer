@@ -23,8 +23,9 @@
 }
 
 #user .user-details {
-  padding-bottom: 10px;
-  text-align: left;
+  font-size: 150%;
+  margin: auto;
+}
 
 .colour {
   background-color: #F0F0F0;
@@ -37,3 +38,4 @@
 .map, #map {
   position: relative;
 }
+
