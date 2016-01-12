@@ -27,10 +27,11 @@
         url: path + $location.path()
       })
       .then(function(response) {
-        console.log(' ******** RESPONSE RETURNED **********');
-        console.log('Get users data is here, resp.data: ', response);
         self.data = response.data;
-        console.log(self.data);
+        // Format the Dates and time
+        self.data.meal.createdAt = new Date(self.data.meal.createdAt).toLocaleDateString();
+        self.data.meal.date = new Date(self.data.meal.date).toLocaleDateString();
+        self.data.meal.time = new Date(self.data.meal.time).toLocaleTimeString();
 
         var mapCanvas = document.getElementById('map');
         var myLatLng = {lat: self.data.restaurant.lat, lng: self.data.restaurant.lng};
@@ -44,7 +45,7 @@
 
         var marker = new google.maps.Marker({
           position: myLatLng,
-          title: "hello world!"
+          title: self.data.meal.title
         });
 
         marker.setMap(map);
