@@ -64,7 +64,8 @@
                 'coordinate': {
                   lat: item.location.coordinate.latitude,
                   lng: item.location.coordinate.longitude
-                }
+                },
+                image_url: item.image_url
               });
             }
           });
@@ -85,6 +86,7 @@
       self.meal.restaurant.lng = self.meal.restaurant.coordinate.lng;
       self.meal.restaurant.address = self.meal.restaurant.display_address;
       self.meal.restaurant.contact = self.meal.restaurant.phone;
+      self.meal.restaurant.image_url = self.meal.restaurant.image_url;
 
       return searchFactory.postMeal(self.meal)
       .then(function(response) {

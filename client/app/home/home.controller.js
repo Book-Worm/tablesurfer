@@ -14,7 +14,12 @@
       //call the factory function to get all of the meals
       homeFactory.getMeals()
       .then(function(data) {
-        self.events = data;
+        self.events = data.map(function(item) {
+          item.createdAt = new Date(item.createdAt).toLocaleDateString();
+          item.date = new Date(item.date).toLocaleDateString();
+          item.time = new Date(item.time).toLocaleTimeString();
+          return item;
+        });
       });
       
     };
@@ -22,6 +27,7 @@
     self.events = [];
 
     self.getData();
+
 
     self.id = sessionStorage.getItem("facebookId");
 
